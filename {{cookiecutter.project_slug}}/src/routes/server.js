@@ -9,7 +9,7 @@ const SERVER_URLS = {
     '/api/v1/users/password/verify/:resetPasswordCode/',
   ),
 
-  USER_VERIFY: url('/api/v1/users/admin/users/profile/'),
+  USER_VERIFY: url('/api/v1/users/profile/'),
 
   IMAGE_CREATE: url('/api/v1/storage/image/create/'),
 };

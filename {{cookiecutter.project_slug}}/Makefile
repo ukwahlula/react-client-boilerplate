@@ -1,5 +1,5 @@
 start:
-	yarn run start
+	HTTPS=true yarn run start
 
 lint:
 	yarn run lint
