@@ -1,7 +1,6 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Layout } from 'antd';
-;
 import CLIENT_URLS from 'routes/client';
 import NotFoundRoute from 'containers/Errors/NotFoundRoute';
 
