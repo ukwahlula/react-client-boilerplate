@@ -1,0 +1,70 @@
+.content {
+  height: 100vh;
+  padding-top: 200px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 40px;
+  /* identical to box height, or 125% */
+  letter-spacing: -0.41px;
+}
+
+.subTitle {
+  margin-top: 20px;
+
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+  /* identical to box height, or 144% */
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.alert {
+  margin: 40px 0px !important;
+}
+
+.form {
+  margin-top: 70px !important;
+}
+
+.resetPassword {
+  position: absolute;
+  right: 20px;
+  z-index: 10000;
+
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+  color: #ffffff;
+}
+
+.submitBtn {
+  box-sizing: border-box !important;
+  border-radius: 5px !important;
+  float: right;
+  margin-top: 20px;
+}
+
+:global {
+  .auth-form {
+    .ant-form-item-label {
+      padding: 0px !important;
+
+      label {
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+    .ant-form-item-control-input {
+      input::placeholder {
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+  }
+}

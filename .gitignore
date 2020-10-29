@@ -1,0 +1,26 @@
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+*.py[cod]
+__pycache__
+
+# Sublime
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+
+# Pycharm
+.idea/*
+
+# Vim
+*~
+*.swp
+*.swo
+
+# Virtual environments
+.env
+env

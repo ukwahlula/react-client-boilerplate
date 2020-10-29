@@ -1,0 +1,7 @@
+{
+  "project_name": "React Client Boilerplate",
+  "project_slug": "client",
+  "_copy_without_render": [
+    "*.js"
+  ]
+}

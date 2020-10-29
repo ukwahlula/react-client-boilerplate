@@ -1,0 +1,43 @@
+name: GitHub Actions
+on: [create, push]
+jobs:
+  ci:
+    name: Continuous integration
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install Dependencies
+        run: |
+          yarn install
+      - name: Run Build
+        run: make build
+      - name: Run Tests
+        run: make test
+      - name: Run Lint
+        run: make lint
+  cd:
+    name: Continuous delivery
+    runs-on: ubuntu-latest
+    needs: ci
+    if: |
+      github.event_name == 'create' && github.event.ref_type == 'tag' ||
+      (github.event_name == 'push' && (
+        endsWith(github.event.ref, '/master') ||
+        endsWith(github.event.ref, '/develop')
+      ))
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install Dependencies
+        run: yarn install
+      - name: Build and Deploy
+        run: bash .github/workflows/deploy.sh
+        env:
+          {% raw %}
+          REACT_APP_API_SERVER_PRODUCTION: ${{ secrets.REACT_APP_API_SERVER_PRODUCTION }}
+          REACT_APP_API_SERVER_STAGING: ${{ secrets.REACT_APP_API_SERVER_STAGING }}
+          REACT_APP_API_SERVER_TESTING: ${{ secrets.REACT_APP_API_SERVER_TESTING }}
+          {% endraw %}

@@ -1,0 +1,38 @@
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+*.log.*
+*.log
+
+# Cache
+.cache
+.sass-cache
+
+# Sublime
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+
+# Pycharm
+.idea/*
+
+# C9
+.c9
+
+# Vim
+*~
+*.swp
+*.swo
+
+# Virtual environments
+.env
+env
+
+# Client
+build/
+node_modules/
+coverage/
